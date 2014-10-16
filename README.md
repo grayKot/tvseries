@@ -1,4 +1,4 @@
 tvseries
 ========
 
-tv series lookup (alpha)
+TV series lookup (alpha)
