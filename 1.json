@@ -1,0 +1,142 @@
+{
+    "backdrop_path": "/9wU0qF1dY6Bc4MgchH1d4WAX6IW.jpg",
+    "created_by": [{
+            "id": 34517,
+            "name": "Trey Parker",
+            "profile_path": "/qXLTxMTfX15od88WHpBZz6xURR0.jpg"
+        }, {
+            "id": 34518,
+            "name": "Matt Stone",
+            "profile_path": "/fENM2HlxKgMe81OTTgert1Q55pj.jpg"
+        }
+    ],
+    "episode_run_time": [25],
+    "first_air_date": "1997-08-13",
+    "genres": [{
+            "id": 16,
+            "name": "Animation"
+        }, {
+            "id": 35,
+            "name": "Comedy"
+        }
+    ],
+    "homepage": "http://southpark.cc.com/",
+    "id": 2190,
+    "in_production": true,
+    "languages": ["en"],
+    "last_air_date": "2014-10-15",
+    "name": "South Park",
+    "networks": [{
+            "id": 47,
+            "name": "Comedy Central"
+        }
+    ],
+    "number_of_episodes": 251,
+    "number_of_seasons": 18,
+    "original_name": "South Park",
+    "origin_country": ["US"],
+    "overview": "South Park is an American adult animated sitcom created by Trey Parker and Matt Stone for the Comedy Central television network. Intended for mature audiences, the show has become famous for its crude language and dark, surreal humor that satirizes a wide range of topics. The ongoing narrative revolves around four boys—Stan Marsh, Kyle Broflovski, Eric Cartman and Kenny McCormick—and their bizarre adventures in and around the titular Colorado town.",
+    "popularity": 3.33834302508055,
+    "poster_path": "/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+    "production_companies": [],
+    "seasons": [{
+            "air_date": "1992-12-14",
+            "id": 6718,
+            "poster_path": "/2iRGtQM5WuklSNFhn7Tz7JTbzMQ.jpg",
+            "season_number": 0
+        }, {
+            "air_date": "1997-08-13",
+            "id": 6705,
+            "poster_path": "/bkKaNYGLnOtzu4w8YbPDbLHOUIt.jpg",
+            "season_number": 1
+        }, {
+            "air_date": "1998-04-01",
+            "id": 6706,
+            "poster_path": "/vJi9BIbUMSrdgPmlGRFTm7Avi1v.jpg",
+            "season_number": 2
+        }, {
+            "air_date": "1999-04-07",
+            "id": 6707,
+            "poster_path": "/x3jdSHgjyps2VQPmJ6KKgZqVEcE.jpg",
+            "season_number": 3
+        }, {
+            "air_date": "2000-04-05",
+            "id": 6708,
+            "poster_path": "/hAnKP4GRgOVx4XxA8OgSxmiyXNr.jpg",
+            "season_number": 4
+        }, {
+            "air_date": "2001-06-20",
+            "id": 6709,
+            "poster_path": "/mbNzB0ji7QpHAMNnf0xpAJYoQWJ.jpg",
+            "season_number": 5
+        }, {
+            "air_date": "2002-03-06",
+            "id": 6710,
+            "poster_path": "/7nKjCuBH0tGkLwBwxDgxbBrNj5F.jpg",
+            "season_number": 6
+        }, {
+            "air_date": "2003-03-19",
+            "id": 6711,
+            "poster_path": "/zYHoEtNxkdAa4g8wPdBdGq8VOzC.jpg",
+            "season_number": 7
+        }, {
+            "air_date": "2004-03-17",
+            "id": 6712,
+            "poster_path": "/aTTmEQqmlVGNHNKJ8K4rFAnZrPo.jpg",
+            "season_number": 8
+        }, {
+            "air_date": "2005-03-09",
+            "id": 6713,
+            "poster_path": "/bg3kD7gkIkRc50vQJoqascJvyKo.jpg",
+            "season_number": 9
+        }, {
+            "air_date": "2006-03-22",
+            "id": 6714,
+            "poster_path": "/brFCz0wW2bRyOyK81OqwDiJDmFA.jpg",
+            "season_number": 10
+        }, {
+            "air_date": "2007-03-07",
+            "id": 6722,
+            "poster_path": "/r6yHJ86hmOFAJhFEjZ7qjp5Dtod.jpg",
+            "season_number": 11
+        }, {
+            "air_date": "2008-03-12",
+            "id": 6715,
+            "poster_path": "/bpRT2WkntkFZbRRk5O1umSE9UXF.jpg",
+            "season_number": 12
+        }, {
+            "air_date": "2009-03-11",
+            "id": 6716,
+            "poster_path": "/15Lszg1L3w6vGGqFFoTN0asxj5C.jpg",
+            "season_number": 13
+        }, {
+            "air_date": "2010-03-17",
+            "id": 6717,
+            "poster_path": "/yhE2ByH6NCPEg07BSx5nITibEcP.jpg",
+            "season_number": 14
+        }, {
+            "air_date": "2011-04-27",
+            "id": 6719,
+            "poster_path": "/bL7jecpYWmnDeh54YCI3YjPF8LD.jpg",
+            "season_number": 15
+        }, {
+            "air_date": "2012-03-14",
+            "id": 6720,
+            "poster_path": "/4ltOMrSjZGiu34UtwWk2pgEpk5h.jpg",
+            "season_number": 16
+        }, {
+            "air_date": "2013-09-25",
+            "id": 6721,
+            "poster_path": "/8fBwkefuaVeg4HyyjcvXSTmjwdN.jpg",
+            "season_number": 17
+        }, {
+            "air_date": "2014-09-24",
+            "id": 62784,
+            "poster_path": null,
+            "season_number": 18
+        }
+    ],
+    "status": "Returning Series",
+    "vote_average": 8.9,
+    "vote_count": 24
+}

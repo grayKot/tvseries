@@ -1,0 +1,77 @@
+{
+    "air_date": "2014-09-24",
+    "episodes": [{
+            "air_date": "2014-09-24",
+            "crew": [{
+                    "id": 34517,
+                    "credit_id": "525726d5760ee3776a2745b3",
+                    "name": "Trey Parker",
+                    "department": "Writing",
+                    "job": "Writer",
+                    "profile_path": "/qXLTxMTfX15od88WHpBZz6xURR0.jpg"
+                }, {
+                    "id": 34517,
+                    "credit_id": "525726d5760ee3776a274659",
+                    "name": "Trey Parker",
+                    "department": "Directing",
+                    "job": "Director",
+                    "profile_path": "/qXLTxMTfX15od88WHpBZz6xURR0.jpg"
+                }
+            ],
+            "episode_number": 1,
+            "guest_stars": [],
+            "name": "Go Fund Yourself",
+            "overview": "After Cartman and the boys name their new company, The Washington Redskins, they just sit back and watch the funding roll in. The head coach of the Washington Redskins football team demands that they change the name but Cartman digs in his heels. The Washington Redskins may never mean the same thing ever again.",
+            "id": 1009440,
+            "production_code": "1801",
+            "season_number": 18,
+            "still_path": "/rLyfUMt5KrO1OMXPH1FfeIxym84.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0
+        }, {
+            "air_date": "2014-10-01",
+            "crew": [],
+            "episode_number": 2,
+            "guest_stars": [],
+            "name": "Gluten Free Ebola",
+            "overview": "Mr. Mackey is now gluten free and everyone is annoyed when he won’t quit preaching about how great he feels. But, after witnessing a disturbing demonstration of what happens to your body when you do eat gluten, South Park becomes the first town in America to go gluten free.",
+            "id": 1010231,
+            "production_code": null,
+            "season_number": 18,
+            "still_path": "/esthLIbVv6olXj79ECoiN7CqEdi.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0
+        }, {
+            "air_date": "2014-10-08",
+            "crew": [],
+            "episode_number": 3,
+            "guest_stars": [],
+            "name": "The Cissy",
+            "overview": "Stan is searching for answers about how a person who he’s always known to be one thing could suddenly identify with another. In the meantime, the pressure of holding on to a giant secret is starting to get to Randy.",
+            "id": 1011144,
+            "production_code": null,
+            "season_number": 18,
+            "still_path": "/q2LLRnfMbPz1FyJbZmXsoLMjN2L.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0
+        }, {
+            "air_date": "2014-10-15",
+            "crew": [],
+            "episode_number": 4,
+            "guest_stars": [],
+            "name": "Handicar",
+            "overview": "",
+            "id": 1011887,
+            "production_code": null,
+            "season_number": 18,
+            "still_path": null,
+            "vote_average": 0.0,
+            "vote_count": 0
+        }
+    ],
+    "name": "Season 18",
+    "overview": "",
+    "id": 62784,
+    "poster_path": null,
+    "season_number": 18
+}

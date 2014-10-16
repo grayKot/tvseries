@@ -1,0 +1,18 @@
+{
+    "page": 1,
+    "results": [{
+            "backdrop_path": "/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+            "id": 1434,
+            "original_name": "Family Guy",
+            "first_air_date": "1999-01-31",
+            "origin_country": ["US"],
+            "poster_path": "/n3UBzIx28m3FpC2EDwVJIjvPxnl.jpg",
+            "popularity": 4.97326485042864,
+            "name": "Family Guy",
+            "vote_average": 8.4,
+            "vote_count": 28
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 1
+}
