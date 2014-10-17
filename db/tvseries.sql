@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.6deb1
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 16, 2014 at 09:40 PM
--- Server version: 5.5.35-0ubuntu0.13.10.1
--- PHP Version: 5.5.3-1ubuntu2.1
+-- Generation Time: Oct 17, 2014 at 06:12 PM
+-- Server version: 5.5.40-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `episodes` (
   `id` int(11) NOT NULL,
   `season_no` int(11) NOT NULL,
-  `episod_no` int(11) NOT NULL,
+  `episode_no` int(11) NOT NULL,
   `series_name` varchar(250) NOT NULL,
   `episode_name` varchar(250) NOT NULL,
   `air_date` date NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `episodes` (
 -- Dumping data for table `episodes`
 --
 
-INSERT INTO `episodes` (`id`, `season_no`, `episod_no`, `series_name`, `episode_name`, `air_date`) VALUES
+INSERT INTO `episodes` (`id`, `season_no`, `episode_no`, `series_name`, `episode_name`, `air_date`) VALUES
 (123, 13, 4, 'Family Guy', 'Brian the Closer', '2014-11-09'),
 (1005881, 11, 3, 'American Dad', 'Blagsnarst, A Love Story', '2014-09-21'),
 (1005905, 11, 2, 'American Dad', 'Blonde Ambition', '2014-10-13'),
