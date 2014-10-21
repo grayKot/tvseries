@@ -7,10 +7,11 @@ use DateTime;
 
 
 my $today = DateTime->now()->ymd();
+my $from_date = DateTime->now()->subtract('months' => 1)->ymd();
 
 my $dsn = "DBI:mysql:database=tvseries;host=localhost";
 my $dbh = DBI->connect($dsn, 'tvseries', '12345');
-my $sql = "SELECT * FROM episodes ORDER BY air_date";
+my $sql = "SELECT * FROM episodes WHERE air_date >= '$from_date' AND air_date != '0000-00-00' ORDER BY air_date";
 my $sth = $dbh->prepare($sql);
 $sth->execute();
 
@@ -39,10 +40,13 @@ my $date_to = DateTime->new(
 my @calendar;
 while ( DateTime->compare($date, $date_to) <= 0 ) {
     my $ymd = $date->ymd();
+    my $day_of_week = $date->day_of_week();
+    
     my $day = {
-        date   => $ymd,
-        date_f => $date->strftime("%d.%m.%y"),
-        old    => ($today gt $ymd) ? 1 : 0,
+        date    => $ymd,
+        date_f  => $date->strftime("%d.%m.%y"),
+        old     => ($today gt $ymd) ? 1 : 0,
+        weekend => ($day_of_week == 6 || $day_of_week == 7) ? 1 : 0,
     };
     
     if ($episodes{$ymd}) {
@@ -67,19 +71,23 @@ Content-type: text/html
 <html>
 <head>
 <style>
-    .old td {color: grey}
-    .today td {font-weight: bold}
+    table { border-collapse: collapse; }
+    .old td { color: grey; }
+    .today td { font-weight: bold; }
+    .weekend>td:first-of-type { background-color: #FFEEEE; }
+    .day { border-bottom: 1px dotted grey; }
+}
 </style>
 </head>
 <body>
 <h1>TV Series</h1>
 
-<table border=1>
+<table>
 [% FOREACH day IN calendar %]
 [% IF day.skip %]
     [% NEXT %]
 [% END %]
-<tr[% IF day.old %] class="old"[% ELSIF day.date == today %] class="today"[% END %]>
+<tr class="day[% IF day.old %] old[% END %][% IF day.date == today %] today[% END %][% IF day.weekend %] weekend[% END %]">
     <td>[% day.date_f %]</td>
     <td>
         <table>
@@ -88,6 +96,7 @@ Content-type: text/html
                 <td>[% ep.series_name %]</td>
                 <td>S[% ep.season_no %]E[% ep.episode_no %]</td>
                 <td>[% ep.episode_name %]</td>
+                <td>[% ep.translate %]</td>
             </tr>
             [% END %]
         </table>
