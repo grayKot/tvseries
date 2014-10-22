@@ -72,7 +72,7 @@ Content-type: text/html
 <head>
 <style>
     table { border-collapse: collapse; }
-    .old td { color: grey; }
+    .old { color: grey; }
     .today td { font-weight: bold; }
     .weekend>td:first-of-type { background-color: #FFEEEE; }
     .day { border-bottom: 1px dotted grey; }
@@ -92,7 +92,7 @@ Content-type: text/html
     <td>
         <table>
             [% FOREACH ep IN day.episodes %]
-            <tr[% IF day.old %] class="old"[% END %]>
+            <tr>
                 <td>[% ep.series_name %]</td>
                 <td>S[% ep.season_no %]E[% ep.episode_no %]</td>
                 <td>[% ep.episode_name %]</td>
