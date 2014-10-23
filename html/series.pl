@@ -4,6 +4,13 @@ use Data::Dumper;
 use DBI;
 use Template;
 use DateTime;
+use JSON;
+
+my $conf_file = '../conf/conf.json';
+open my $CONF, '<', $conf_file or die "can't open conf";
+my $conf_json = join '', <$CONF>;
+my $conf = from_json($conf_json);
+close $CONF;
 
 
 my $today = DateTime->now()->ymd();
@@ -88,13 +95,14 @@ Content-type: text/html
 <head>
 <style>
     table { border-collapse: collapse; }
+    .date { vertical-align: top; }
     .old { color: grey; }
-    .today td { font-weight: bold; }
-    .weekend>td:first-of-type { background-color: #FFEEEE; }
+    .today { font-weight: bold; }
+    .weekend { background-color: #FFEEEE; }
     .day { border-bottom: 1px dotted grey; }
     .hide_link { display: none }
 
-    a { font-size: small; color: #003E63; text-decoration: none }
+    a { font-size: small; color: #003E63; text-decoration: none; }
     a:visited { color: #240040; }
     a:hover { border-bottom: 1px dotted #003E63; }
 }
@@ -124,26 +132,24 @@ Content-type: text/html
 [% IF day.skip %]
     [% NEXT %]
 [% END %]
-<tr class="day[% IF day.old %] old[% END %][% IF day.date == today %] today[% END %][% IF day.weekend %] weekend[% END %]">
-    <td>[% day.date_f %]</td>
+<tr class="day">
+    <td class="date [% IF day.old %] old[% END %][% IF day.date == today %] today[% END %][% IF day.weekend %] weekend[% END %]">[% day.date_f %]</td>
     <td>
-        <table>
-            [% FOREACH ep IN day.episodes %]
-            <tr>
-                <td>[% ep.series_name %]</td>
-                <td>S[% ep.season_no %]E[% ep.episode_no %]</td>
-                <td>[% ep.episode_name %]</td>
-                <td>[% IF ep.links %]<a title="rutracker" href="#" onclick="show_or_hide('[% ep.episode_id %]')"><img src="rutracker.png" /></a>[% END %]</td>
-            </tr>
-            [% FOREACH link IN ep.links %]
-            <tr class="hide_link [% ep.episode_id %]">
-                <td colspan="4">
+
+    [% FOREACH ep IN day.episodes %]
+        [% ep.series_name %]
+        S[% ep.season_no %]E[% ep.episode_no %]
+        [% ep.episode_name %]
+        [% IF ep.links %]<a title="rutracker" href="#" onclick="show_or_hide('[% ep.episode_id %]')"><img src="rutracker.png" /></a>[% END %]
+        [% IF ep.links %]
+            <div class="hide_link [% ep.episode_id %]">
+                [% FOREACH link IN ep.links %]
                     <a href="[% link.link_href %]">[% link.link_description %]</a><br>
-                </td>
-            </tr>
-            [% END %]
-            [% END %]
-        </table>
+                [% END %]
+            </div>
+        [% END %]
+        <br>
+    [% END %]
     </td>
 </tr>
 [% END %]

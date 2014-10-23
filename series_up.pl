@@ -14,6 +14,12 @@ use Mojo::DOM;
 use JSON;
 use DBI;
 
+my $conf_file = '../conf/conf.json';
+open my $CONF, '<', $conf_file or die "can't open conf";
+my $conf_json = join '', <$CONF>;
+my $conf = from_json($conf_json);
+close $CONF;
+
 my $api_key = 'api_key=0f154eb1af78f30e6b5712b4ebf6dc28';
 my $url_base = 'https://api.themoviedb.org/3/';
 
@@ -31,8 +37,8 @@ $ua->default_header( referer => 'http://login.rutracker.org/forum/login.php' );
 
 my %form = (
     redirect       => 'index.php',
-    login_username => 'graykot',
-    login_password => 'k0ttortor',
+    login_username => $conf->{rutracker_username},
+    login_password => $conf->{rutracker_password},
     login          => '%C2%F5%EE%E4',
 );
 my $response = $ua->post('http://login.rutracker.org/forum/login.php', \%form);

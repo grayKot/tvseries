@@ -1,0 +1,8 @@
+{
+    "db_host": "localhost",
+    "db_name": "tvseries",
+    "db_username": "tvseries",
+    "db_password": "12345",
+    "rutracker_username": "",
+    "rutracker_password": ""
+}
