@@ -11,6 +11,18 @@ my $from_date = DateTime->now()->subtract('months' => 1)->ymd();
 
 my $dsn = "DBI:mysql:database=tvseries;host=localhost";
 my $dbh = DBI->connect($dsn, 'tvseries', '12345');
+$dbh->do('SET NAMES utf8');
+
+my $sql_links = "SELECT links.* FROM episodes JOIN links USING(episode_id)
+    WHERE air_date >= '$from_date' AND air_date != '0000-00-00'";
+my $sth_links = $dbh->prepare($sql_links);
+$sth_links->execute();
+
+my %links;
+while (my $row = $sth_links->fetchrow_hashref()) {
+    push @{ $links{ $row->{episode_id} } }, $row;
+}
+
 my $sql = "SELECT * FROM episodes WHERE air_date >= '$from_date' AND air_date != '0000-00-00' ORDER BY air_date";
 my $sth = $dbh->prepare($sql);
 $sth->execute();
@@ -19,6 +31,10 @@ my @episodes_list;
 my %episodes;
 while (my $row = $sth->fetchrow_hashref()) {
     $row->{old} = ($today gt $row->{air_date}) ? 1 : 0;
+    if ( $links{ $row->{episode_id} } ) {
+        $row->{links} = $links{ $row->{episode_id} };
+    }
+    
     push @episodes_list, $row;
     push @{ $episodes{$row->{air_date}} }, $row;
 }
@@ -76,8 +92,29 @@ Content-type: text/html
     .today td { font-weight: bold; }
     .weekend>td:first-of-type { background-color: #FFEEEE; }
     .day { border-bottom: 1px dotted grey; }
+    .hide_link { display: none }
+
+    a { font-size: small; color: #003E63; text-decoration: none }
+    a:visited { color: #240040; }
+    a:hover { border-bottom: 1px dotted #003E63; }
 }
 </style>
+<script src="/jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        
+    });
+    function show_or_hide (episode) {
+        $( "."+episode ).each(function() {
+            if ( $( this ).hasClass( 'hide_link' ) ) {
+                $( this ).removeClass( "hide_link" );
+            } else {
+                $( this ).addClass( "hide_link" );
+            }
+            
+        });
+    }
+</script>
 </head>
 <body>
 <h1>TV Series</h1>
@@ -96,8 +133,15 @@ Content-type: text/html
                 <td>[% ep.series_name %]</td>
                 <td>S[% ep.season_no %]E[% ep.episode_no %]</td>
                 <td>[% ep.episode_name %]</td>
-                <td>[% ep.translate %]</td>
+                <td>[% IF ep.links %]<a title="rutracker" href="#" onclick="show_or_hide('[% ep.episode_id %]')"><img src="rutracker.png" /></a>[% END %]</td>
             </tr>
+            [% FOREACH link IN ep.links %]
+            <tr class="hide_link [% ep.episode_id %]">
+                <td colspan="4">
+                    <a href="[% link.link_href %]">[% link.link_description %]</a><br>
+                </td>
+            </tr>
+            [% END %]
             [% END %]
         </table>
     </td>
